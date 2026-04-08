@@ -155,39 +155,53 @@ function App() {
 
       <section id="hero" className="hero">
         <img
-          src="/flourish.png"
+          src={`${import.meta.env.BASE_URL}flourish.png`}
           alt=""
           className="hero-flourish top-left"
           aria-hidden="true"
         />
         <img
-          src="/flourish.png"
+          src={`${import.meta.env.BASE_URL}flourish.png`}
           alt=""
           className="hero-flourish top-right"
           aria-hidden="true"
         />
         <img
-          src="/flourish.png"
+          src={`${import.meta.env.BASE_URL}flourish.png`}
           alt=""
           className="hero-flourish bottom-left"
           aria-hidden="true"
         />
         <img
-          src="/flourish.png"
+          src={`${import.meta.env.BASE_URL}flourish.png`}
           alt=""
           className="hero-flourish bottom-right"
           aria-hidden="true"
         />
-        <img src="/ganesha.png" alt="Lord Ganesha" className="hero-ganesha" />
+        <img
+          src={`${import.meta.env.BASE_URL}ganesha.png`}
+          alt="Lord Ganesha"
+          className="hero-ganesha"
+        />
         <div className="hero-rings-wrapper">
           <div className="hero-rings-line left">
-            <img src="/gold_frame_divider_left.png" alt="" />
+            <img
+              src={`${import.meta.env.BASE_URL}gold_frame_divider_left.png`}
+              alt=""
+            />
           </div>
           <div className="hero-rings">
-            <img src="/love.png" alt="" className="hero-rings-img" />
+            <img
+              src={`${import.meta.env.BASE_URL}love.png`}
+              alt=""
+              className="hero-rings-img"
+            />
           </div>
           <div className="hero-rings-line right">
-            <img src="/gold_frame_divider_right.png" alt="" />
+            <img
+              src={`${import.meta.env.BASE_URL}gold_frame_divider_right.png`}
+              alt=""
+            />
           </div>
         </div>
         <p className="hero-subtitle">You are cordially invited to the</p>
