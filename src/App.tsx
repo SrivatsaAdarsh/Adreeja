@@ -119,30 +119,25 @@ function App() {
     };
   }, []);
 
+  const isLastSection = activeSection >= sectionIds.length - 1;
+
   const FloatingNav = () => (
     <div className="floating-nav">
-      {activeSection > 0 && (
-        <button
-          className="section-nav-btn up"
-          aria-label="Scroll to previous section"
-          onClick={() => scrollToSection(sectionIds[activeSection - 1])}
-        >
-          <svg viewBox="0 0 24 24">
-            <polyline points="6 15 12 9 18 15" />
-          </svg>
-        </button>
-      )}
-      {activeSection < sectionIds.length - 1 && (
-        <button
-          className="section-nav-btn down"
-          aria-label="Scroll to next section"
-          onClick={() => scrollToSection(sectionIds[activeSection + 1])}
-        >
-          <svg viewBox="0 0 24 24">
-            <polyline points="6 9 12 15 18 9" />
-          </svg>
-        </button>
-      )}
+      <button
+        className={`section-nav-btn ${isLastSection ? "up" : "down"}`}
+        aria-label={isLastSection ? "Scroll to top" : "Scroll to next section"}
+        onClick={() =>
+          isLastSection
+            ? scrollToSection(sectionIds[0])
+            : scrollToSection(sectionIds[activeSection + 1])
+        }
+      >
+        <svg viewBox="0 0 24 24">
+          <polyline
+            points={isLastSection ? "6 15 12 9 18 15" : "6 9 12 15 18 9"}
+          />
+        </svg>
+      </button>
     </div>
   );
 
@@ -281,19 +276,26 @@ function App() {
             { label: "Hours", value: countdown.hours },
             { label: "Minutes", value: countdown.minutes },
             { label: "Seconds", value: countdown.seconds },
-          ].map((unit) => (
-            <div className="countdown-unit" key={unit.label}>
-              <span className="countdown-label">{unit.label}</span>
-              <div className="countdown-digits">
-                {padTwo(unit.value)
-                  .split("")
-                  .map((digit, index) => (
-                    <div className="flip-card" key={index}>
-                      <span className="digit">{digit}</span>
-                    </div>
-                  ))}
+          ].map((unit, idx) => (
+            <>
+              {idx > 0 && (
+                <span className="countdown-colon" key={`colon-${idx}`}>
+                  :
+                </span>
+              )}
+              <div className="countdown-unit" key={unit.label}>
+                <span className="countdown-label">{unit.label}</span>
+                <div className="countdown-digits">
+                  {padTwo(unit.value)
+                    .split("")
+                    .map((digit, index) => (
+                      <div className="flip-card" key={index}>
+                        <span className="digit">{digit}</span>
+                      </div>
+                    ))}
+                </div>
               </div>
-            </div>
+            </>
           ))}
         </div>
         <button
