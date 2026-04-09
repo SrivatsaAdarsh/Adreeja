@@ -233,7 +233,7 @@ function App() {
           <div className="detail-group reveal delay-2">
             <span className="detail-icon">🕓</span>
             <p className="detail-label">Time</p>
-            <p className="detail-value">10:30 AM Onwards</p>
+            <p className="detail-value">11 AM Onwards</p>
             <p className="detail-extra"></p>
           </div>
           <div className="detail-group reveal delay-3">
