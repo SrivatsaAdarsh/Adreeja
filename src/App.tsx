@@ -217,7 +217,13 @@ function App() {
         <div className="details reveal">
           <h3 className="section-title">The Ceremony</h3>
           <div className="detail-group reveal delay-1">
-            <span className="detail-icon">📅</span>
+            <span className="detail-icon">
+              <img
+                src={`${import.meta.env.BASE_URL}calendar.png`}
+                alt="Calendar"
+                className="detail-icon-img"
+              />
+            </span>
             <p className="detail-label">Date</p>
             <p className="detail-value">
               3<sup>rd</sup> of May, 2026
