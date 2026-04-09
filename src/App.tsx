@@ -202,9 +202,9 @@ function App() {
         <p className="hero-subtitle">You are cordially invited to the</p>
         <h1 className="hero-title">Engagement Ceremony</h1>
         <h2 className="hero-names">
-          <span className="name-left">Shreeja V Bhat</span>
+          <span className="name-left">Adarsh S Srivatsa</span>
           <span className="amp">&</span>
-          <span className="name-right">Adarsh S Srivatsa</span>
+          <span className="name-right">Shreeja V Bhat</span>
         </h2>
         <p className="hero-hashtag">#Adreeja</p>
         <div className="hero-date-banner">
