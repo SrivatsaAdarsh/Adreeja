@@ -53,6 +53,24 @@ function App() {
     return () => window.clearTimeout(timeout);
   }, []);
 
+  // Reveal-on-scroll: add .visible to .reveal elements once they enter the viewport
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target); // animate only once
+          }
+        });
+      },
+      { threshold: 0.15 },
+    );
+
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, [isLoaded]);
+
   useEffect(() => {
     function updateCountdown() {
       const now = Date.now();
