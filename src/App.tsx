@@ -224,7 +224,6 @@ function App() {
           <span className="amp">&</span>
           <span className="name-right">Shreeja V Bhat</span>
         </h2>
-        <p className="hero-hashtag">#Adreeja</p>
         <div className="hero-date-banner">
           <div className="date-text">MAY 3, 2026</div>
           <div className="day-text">Sunday</div>
